@@ -1,25 +1,26 @@
 function mapToSquare (input) {
-    // TODO ใช้ .map สร้าง array ที่เป็นเลขยกกำลังสองของ input
+    return input.map(num => Math.pow(num, 2))
 }
 
 function convertTemperature (input) {
-    // TODO: ให้แปลงอุณหภูมิจาก °F เป็น °C โดยใช้ฟังก์ชัน .map()
     function fah_to_celsius (fah) {
         let cel = (fah - 32) * 5 / 9
         return Number(cel.toFixed(1))
     }
+    return input.map(dp => {return {"date" : dp.date,
+                                    "temperature" : fah_to_celsius(dp.temperature)}})
 }
 
 function filterEvenNumber (input) {
-    // TODO: filter input เอาเลขคู่เท่านั้น
+    return input.filter(num => {return num%2 == 0})
 }
 
 function filterAgeRange (input) {
-    // TODO: กรอง input.people ตามช่วงอายุ
+    return input.people.filter(dp => {return input.min <= dp.age && dp.age <= input.max})
 }
 
 function removeByFilter (input) {
-    // TODO: ลบ Object ใน Array ด้วยการ filter
+    return input.people.filter(dp => {return input.removeId != dp.id})
 }
 
 function insertBySplice (input) {
@@ -33,8 +34,8 @@ function removeBySplice (input) {
 }
 
 function replaceBySplice (input) {
-    // TODO: ให้ใช้ฟังก์ชัน .splice() ในการ **เปลี่ยน (replace)** สมาชิกใน Array  
-    // เรียงลำดับตัวเลขให้ถูกต้อง
+    input.splice(4, 1, 4)
+    return input
 }
 
 function findAverage(input) {
