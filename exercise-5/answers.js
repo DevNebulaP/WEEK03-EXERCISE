@@ -40,5 +40,5 @@ function varLetConst() {
 }
 
 function chainfunction(input){
-    return input.trim().split(" ")[0].toUpperCase() + " " + input.trim().split(" ")[1].toLowerCase()
+    return input.trim().split(" ").map((word) => {return input.trim().split(" ").indexOf(word) == 0?  word.toUpperCase() : word.toLowerCase()}).join(" ")
 }
